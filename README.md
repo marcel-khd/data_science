@@ -1,1 +1,2 @@
-# data_science
+# Data science and machine learning templates
+# Python, R
