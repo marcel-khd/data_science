@@ -1,0 +1,25 @@
+# import our packages
+import pandas as pd
+# command that allows the notebook to list visualizations inline
+%matplotlib inline
+
+# connect to our data
+myExploratoryData = pd.read_csv("exploratory-py.csv")
+
+# see a summary of our data
+myExploratoryData
+
+!pip install seaborn
+import seaborn as sns
+
+# visualize our data
+ax = sns.kdeplot(myExploratoryData.cpa)
+
+# pivot the data
+myETLData =  myExploratoryData.pivot("keyword","impressions","cpa")
+
+# see a summary of our pivot
+myETLData
+
+# visualize our data
+sns.heatmap(myETLData)
